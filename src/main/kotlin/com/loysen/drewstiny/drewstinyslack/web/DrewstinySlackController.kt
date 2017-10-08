@@ -4,6 +4,7 @@ import com.loysen.drewstiny.drewstinyslack.SlackRequest
 import com.loysen.drewstiny.drewstinyslack.SlackResponse
 import com.loysen.drewstiny.drewstinyslack.config.SlackProperties
 import mu.KLogging
+import org.springframework.http.MediaType
 import org.springframework.web.bind.annotation.PostMapping
 import org.springframework.web.bind.annotation.RequestBody
 import org.springframework.web.bind.annotation.RestController
@@ -14,7 +15,7 @@ class DrewstinySlackController(val slackProperties: SlackProperties) {
 
     companion object : KLogging()
 
-    @PostMapping("/")
+    @PostMapping(value = "/", consumes = arrayOf(MediaType.APPLICATION_FORM_URLENCODED_VALUE))
     fun handleMessage(@RequestBody slackRequest: SlackRequest): SlackResponse {
         val command = slackRequest.command
         logger.info { "received command $command" }
