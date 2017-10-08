@@ -4,7 +4,7 @@ import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.context.annotation.ComponentScan
 
-@ComponentScan(basePackages = arrayOf("com.loysen.drewstiny.drewstinyslack.config","com.loysen.drewstiny.drewstinyslack.web"))
+@ComponentScan(basePackages = arrayOf("com.loysen.drewstiny.drewstinyslack.web"))
 @SpringBootApplication
 class DrewstinySlackApplication
 
